@@ -1,6 +1,11 @@
 import tkinter as tk
+from exemplo_radiobutton import MeuRadioButton
 
 class Tela:
+    def abrir_nova_tela(self):
+        gui = tk.Tk()
+        MeuRadioButton(gui)
+    
     def __init__(self, master):
         self.janela = master
         self.janela.geometry('400x400')

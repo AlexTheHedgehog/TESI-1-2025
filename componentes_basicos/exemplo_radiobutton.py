@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
-class Tela:
+class MeuRadioButton:
     def __init__(self, master):
         self.janela = master
         self.janela.geometry('200x200')
@@ -27,5 +27,5 @@ class Tela:
             
 
 gui = tk.Tk()
-Tela(gui)
+MeuRadioButton(gui)
 gui.mainloop()
