@@ -3,6 +3,9 @@ from tkinter import ttk
 class Tela:
     def __init__(self, master):
         self.janela = master
+        #Criar uma forma de centralizar a janela
+        #self.janela
+        
         colunas = ['nome', 'cpf', 'email']
         self.tvw = ttk.Treeview(self.janela, height=5, columns=colunas, show='headings')
         #Configurar o cabaçalho das colunas
