@@ -1,0 +1,62 @@
+@startuml
+
+class Pedido{
+    -valor_total: float
+    -data_pedido: date
+    +Pagar(cupom: str)
+    +finalizar_pedido(comprovante: bool)
+    +confirmar()
+}
+
+class Carrinho{
+    -valor_total: float
+}
+
+class Produto{
+    -descricao: str
+    -preco: float
+    -validade: date
+    -estoque: int
+}
+class Entrega{
+    -cod_rastreamento: str
+    -data_prevista: date
+    +calcular_frete(cep: str)
+    +acompanhar_status(cod_rastreamento)
+}
+
+class Cliente{
+    -nome: str
+    -cpf: str
+    -email: str
+    -historico_pedidos: list
+}
+
+class Pagamento{
+    -forma: str
+    -data_pag: date
+    -comprovante: bool
+}
+
+class Cupom{
+    -nome: str
+    -taxa: float
+    -data_validade: date
+    -utilizado: bool
+    -minimo: float
+    +validar_cupom()
+}
+
+class Item{
+}
+
+Cliente "1..1" -- "1..1" Carrinho
+Carrinho "1..1" -- "0..*" Item
+Produto "1..1" -- "0..*" Item
+Pedido "1..1" -- "1..*" Item
+Cliente "1..1" -- "0..*" Pedido
+Pagamento "1..1" -- "1..1" Pedido
+Pedido "0..*" -- "0..1" Cupom
+Entrega "1..1" -- "1..1" Pedido
+
+@enduml

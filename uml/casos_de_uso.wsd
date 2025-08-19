@@ -1,0 +1,29 @@
+@startuml
+'comentário :D
+actor Cliente
+note right of Cliente : Nota explicativa.
+(Realizar Cadastro) as UC01
+(Validar Senha) as UC02
+(Autocompletar Endereço) as UC03
+Cliente -- UC01
+UC01 ..> UC02 : <<include>>
+UC01 <.. UC03 : <<extend>>
+
+actor Administrador
+(Cadastrar Produtos) as UC04
+(Remover Produtos) as UC05
+(Atualizar Preços) as UC06
+(Atualizar Descrições) as UC07
+(Gerenciar Produtos) as UC08
+(Consultar) as UC09
+(Cancelar) as UC10
+(Confirmar) as UC11
+
+Administrador -- UC04
+Administrador -- UC05
+Administrador -- UC06
+Administrador -- UC07
+Administrador -- UC08
+UC09 ..> UC08 : <<extend>>
+UC10 ..> UC08 : <<extend>>
+UC11 <.. UC08 : <<include>>

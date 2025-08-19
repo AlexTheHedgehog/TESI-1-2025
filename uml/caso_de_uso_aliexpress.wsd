@@ -1,0 +1,5 @@
+@startuml
+
+actor Cliente
+Cliente -- (Realizar Cadastro)
+Cliente -- (Comprar)

@@ -1,0 +1,20 @@
+@startuml
+'substantivos
+actor Cliente
+actor Sistema_De_Pagamento
+actor Administrador
+'verbos
+Cliente -- (Realizar Cadastro)
+Cliente -- (Navegar Pelos Produtos)
+(Navegar Pelos Produtos) <.. (Adicionar Itens) : <<extend>>
+'CLiente -- (Adicionar Itens)
+Cliente -- (Visualizar Carrinho)
+Cliente -- (Realizar Pedido)
+(Realizar Pedido) ..> (Validar Estoque) : <<include>>
+(Realizar Pedido) ..> (Comunicar Pagamento)
+(Comunicar Pagamento) -- Sistema_De_Pagamento
+Cliente -- (Acompanhar Entrega)
+Administrador -- (Gerenciar Produto)
+Administrador -- (Gerenciar Pedido)
+(Realizar Pedido) <.. (Usar CUpom) : <<extend>>
+(Navegar Pelos Produtos) <.. (Salvar Desejos) : <<extend>>
