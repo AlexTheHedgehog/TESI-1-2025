@@ -1,5 +1,11 @@
 @startuml
+'Realizar pedido - AliExpress
 
 actor Cliente
 Cliente -- (Realizar Cadastro)
-Cliente -- (Comprar)
+Cliente -- (Login)
+Cliente -- (Navegar)
+Cliente -- (Selecionar Produto)
+(Selecionar Produto) ..> (Navegar) : <<include>>
+Cliente -- (Realizar Pedido)
+(Realizar Pedido) ..> (Login) : <<include>>
